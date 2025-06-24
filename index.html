@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>জমির ইউনিট কনভার্টার</title>
+  <title>জমির পরিমাপ রূপান্তরক</title>
   <style>
     * { box-sizing: border-box; }
     body, html {
@@ -79,14 +79,14 @@
 </head>
 <body>
   <div class="container">
-    <h1>জমির ইউনিট কনভার্টার.</h1>
+    <h1>জমির পরিমাপ রূপান্তরক.</h1>
     <p id="banglaDate">লোড হচ্ছে...</p>
     <p id="englishDate">Loading...</p>
 
-    <label for="fromUnit">থেকে ইউনিট.</label>
+    <label for="fromUnit">থেকে একক.</label>
     <select id="fromUnit" onchange="convert()"></select>
 
-    <label for="toUnit">প্রতি ইউনিট.</label>
+    <label for="toUnit">প্রতি একক.</label>
     <select id="toUnit" onchange="convert()"></select>
 
     <label for="inputValue">পরিমাণ.</label>
