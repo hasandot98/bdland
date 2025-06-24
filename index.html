@@ -5,9 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>জমির ইউনিট কনভার্টার</title>
   <style>
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
     body, html {
       margin: 0;
       padding: 0;
@@ -16,7 +14,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background-image: url('https://img.freepik.com/premium-photo/beautiful-landscape-rice-fields-thailand_28884-215.jpg?uid=R205093619&ga=GA1.1.255604367.1750481430&semt=ais_items_boosted&w=740');
+      background-image: url('https://img.freepik.com/premium-photo/beautiful-landscape-rice-fields-thailand_28884-215.jpg');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -74,23 +72,23 @@
 </head>
 <body>
   <div class="container">
-    <h1>জমির ইউনিট কনভার্টার</h1>
+    <h1>জমির ইউনিট কনভার্টার.</h1>
     <p id="banglaDate">লোড হচ্ছে...</p>
 
-    <label for="fromUnit">থেকে ইউনিট</label>
+    <label for="fromUnit">থেকে ইউনিট.</label>
     <select id="fromUnit" onchange="convert()"></select>
 
-    <label for="toUnit">প্রতি ইউনিট</label>
+    <label for="toUnit">প্রতি ইউনিট.</label>
     <select id="toUnit" onchange="convert()"></select>
 
-    <label for="inputValue">পরিমাণ</label>
-    <input type="number" id="inputValue" value="1" min="0" step="any" oninput="convert()" />
+    <label for="inputValue">পরিমাণ.</label>
+    <input type="text" id="inputValue" value="১" oninput="convert()" />
 
-    <label for="outputValue">ফলাফল</label>
+    <label for="outputValue">ফলাফল.</label>
     <input type="text" id="outputValue" readonly />
 
     <footer>
-     Copyright © ২০২৫ <a href="https://facebook.com/hasandot98" target="_blank">Mahamudul Hasan</a>
+     Copyright © ২০২৫ <a href="https://github.com/hasandot98" target="_blank">Mahamudul Hasan.</a>
     </footer>
   </div>
 
@@ -120,77 +118,75 @@
         }
         date -= monthLens[i];
       }
-      return `${banglaDays[now.getDay()]}, ${toBanglaNumber(date)} ${banglaMonths[monthIdx]} ${toBanglaNumber(banglaYear)}, ${toBanglaNumber(now.getDate())} ${now.toLocaleString('bn-BD', { month: 'long' })} ${toBanglaNumber(now.getFullYear())}`;
+      return `${banglaDays[now.getDay()]}, ${toBanglaNumber(date)} ${banglaMonths[monthIdx]} ${toBanglaNumber(banglaYear)}`;
     }
 
     document.getElementById("banglaDate").textContent = getBanglaDateString();
 
     const units = {
-      "অযুতাংশ": 4.356,
-      "এয়র": 1076.39,
-      "একর": 43560,
-      "কড়া": 216,
-      "কন্ঠ": 72,
-      "কাক": 54,
-      "কাঠা": 720,
-      "কানি": 17280,
-      "ক্রান্তি": 72.6,
-      "গন্ডা": 864,
-      "ছটাক": 45,
-      "ডেসিমাল": 435.6,
-      "তিল": 3.63,
-      "দুল": 1.71428571429,
-      "ধনু": 12,
-      "বর্গইঞ্চি": 0.00694444,
-      "বর্গগজ": 9,
-      "বর্গচেইন": 4356,
-      "বর্গফুট": 1,
-      "বর্গমিটার": 10.7639,
-      "বর্গলিংক": 0.4356,
-      "বর্গহাত": 2.25,
-      "বিঘা": 14400,
-      "রেনু": 0.05714285714,
-      "শতাংশ": 435.6,
-      "হেক্টর": 107639,
-      "শতক": 435.6,
-      "কাচ্চা কানি": 17424,
-      "সাই কানি ১": 52272,
-      "সাই কানি ২": 69696,
-      "ডিসিম": 435.6,
-      "বর্গসেন্টিমিটার": 0.00107639,
-      "বর্গকিলোমিটার": 10763910.41670972,
-      "বর্গমাইল": 27880000
+      "অযুতাংশ": 4.356, "এয়র": 1076.39, "একর": 43560, "কড়া": 216,
+      "কন্ঠ": 72, "কাক": 54, "কাঠা": 720, "কানি": 17280,
+      "ক্রান্তি": 72.6, "গন্ডা": 864, "ছটাক": 45, "ডেসিমাল": 435.6,
+      "তিল": 3.63, "দুল": 1.71428571429, "ধনু": 12, "বর্গইঞ্চি": 0.00694444,
+      "বর্গগজ": 9, "বর্গচেইন": 4356, "বর্গফুট": 1, "বর্গমিটার": 10.7639,
+      "বর্গলিংক": 0.4356, "বর্গহাত": 2.25, "বিঘা": 14400, "রেনু": 0.05714285714,
+      "শতাংশ": 435.6, "হেক্টর": 107639, "শতক": 435.6, "কাচ্চা কানি": 17424,
+      "ডিসিম": 435.6, "বর্গসেন্টিমিটার": 0.00107639,
+      "বর্গকিলোমিটার": 10763910.41670972, "বর্গমাইল": 27880000,
+      "আনা": 62.5, "অংশ": 1000
     };
 
     const fromUnit = document.getElementById("fromUnit");
     const toUnit = document.getElementById("toUnit");
+    const inputValue = document.getElementById("inputValue");
+    const outputValue = document.getElementById("outputValue");
 
-    for (let name in units) {
-      const optionFrom = document.createElement("option");
-      optionFrom.textContent = name;
-      optionFrom.value = units[name];
-      fromUnit.appendChild(optionFrom);
+    function addOptions() {
+      for (let name in units) {
+        let optionFrom = document.createElement("option");
+        optionFrom.textContent = name;
+        optionFrom.value = units[name];
+        if (name === "গন্ডা") optionFrom.selected = true;
+        fromUnit.appendChild(optionFrom);
 
-      const optionTo = document.createElement("option");
-      optionTo.textContent = name;
-      optionTo.value = units[name];
-      toUnit.appendChild(optionTo);
-    }
-
-    fromUnit.selectedIndex = Object.keys(units).indexOf("শতক");
-    toUnit.selectedIndex = Object.keys(units).indexOf("গন্ডা");
-
-    function convert() {
-      const input = parseFloat(document.getElementById("inputValue").value);
-      const fromVal = parseFloat(fromUnit.value);
-      const toVal = parseFloat(toUnit.value);
-      if (!isNaN(input)) {
-        const result = (input * fromVal) / toVal;
-        document.getElementById("outputValue").value = result.toFixed(4);
+        let optionTo = document.createElement("option");
+        optionTo.textContent = name;
+        optionTo.value = units[name];
+        if (name === "শতক") optionTo.selected = true;
+        toUnit.appendChild(optionTo);
       }
     }
 
-    window.onload = convert;
+    function convertBanglaInput(str) {
+      const en = ['0','1','2','3','4','5','6','7','8','9','.'];
+      const bn = ['০','১','২','৩','৪','৫','৬','৭','৮','৯','.'];
+      let res = '';
+      for(let ch of str) {
+        let idx = bn.indexOf(ch);
+        res += idx !== -1 ? en[idx] : (en.includes(ch) ? ch : '');
+      }
+      return res;
+    }
+
+    function convert() {
+      let rawInput = inputValue.value.trim();
+      if(rawInput === '') {
+        outputValue.value = '';
+        return;
+      }
+      let num = parseFloat(convertBanglaInput(rawInput));
+      if (isNaN(num)) {
+        outputValue.value = 'ভুল ইনপুট';
+        return;
+      }
+      const fromVal = parseFloat(fromUnit.value);
+      const toVal = parseFloat(toUnit.value);
+      const result = (num * fromVal) / toVal;
+      outputValue.value = toBanglaNumber(result.toFixed(4));
+    }
+
+    addOptions();
+    convert();
   </script>
 </body>
 </html>
