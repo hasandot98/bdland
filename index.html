@@ -39,7 +39,14 @@
       font-size: 14px;
       font-weight: 600;
       color: #2563eb;
-      margin-bottom: 20px;
+      margin-bottom: 6px;
+    }
+    #englishDate {
+      font-size: 12px;
+      font-weight: 500;
+      color: #8B0000;  /* blood red */
+      margin-bottom: 15px;
+      text-align: center;
     }
     label {
       display: block;
@@ -74,6 +81,7 @@
   <div class="container">
     <h1>জমির ইউনিট কনভার্টার.</h1>
     <p id="banglaDate">লোড হচ্ছে...</p>
+    <p id="englishDate">Loading...</p>
 
     <label for="fromUnit">থেকে ইউনিট.</label>
     <select id="fromUnit" onchange="convert()"></select>
@@ -121,7 +129,19 @@
       return `${banglaDays[now.getDay()]}, ${toBanglaNumber(date)} ${banglaMonths[monthIdx]} ${toBanglaNumber(banglaYear)}`;
     }
 
+    function getEnglishDateString() {
+      const now = new Date();
+      const daysEng = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+      const monthsEng = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+      const dayName = daysEng[now.getDay()];
+      const date = now.getDate();
+      const monthName = monthsEng[now.getMonth()];
+      const year = now.getFullYear();
+      return `${dayName}, ${date} ${monthName} ${year}`;
+    }
+
     document.getElementById("banglaDate").textContent = getBanglaDateString();
+    document.getElementById("englishDate").textContent = getEnglishDateString();
 
     const units = {
       "অযুতাংশ": 4.356, "এয়র": 1076.39, "একর": 43560, "কড়া": 216,
